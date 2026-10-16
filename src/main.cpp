@@ -6,14 +6,9 @@ using namespace geode::prelude;
 
 class $modify(ImmortalPlayLayer, PlayLayer) {
     void destroyPlayer(PlayerObject* player, GameObject* object) {
-        bool immortal = Mod::get()->getSettingValue<bool>(
-            "immortalEnabled"
-        );
-
-        if (immortal) {
-            return;
-        }
-
-        PlayLayer::destroyPlayer(player, object);
+        // Test mode: prevent normal player death.
+        // This version is always enabled.
+        (void)player;
+        (void)object;
     }
 };
