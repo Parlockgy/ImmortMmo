@@ -1,18 +1,19 @@
+
 {
-  "geode": "4.7.0",
+  "geode": "5.11.2",
   "gd": {
-    "android": "2.2074",
-    "win": "2.2074"
+    "android": "2.2081",
+    "win": "2.2081"
   },
   "id": "hazem.immortalmode",
   "name": "Immortal Mode",
   "version": "v1.0.0",
   "developer": "Hazem",
-  "description": "Toggleable immortality for Geometry Dash. Prevents player death when enabled.",
+  "description": "Toggleable immortality for Geometry Dash.",
   "settings": {
     "immortalEnabled": {
       "name": "Immortal Mode",
-      "description": "Enable or disable immortality.",
+      "description": "Prevent player death when enabled.",
       "type": "bool",
       "default": false
     }
