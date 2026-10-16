@@ -1,3 +1,4 @@
+
 name: Build Immortal Mode
 
 on:
@@ -11,19 +12,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Build Geode Mod
+      - name: Build Geode mod
         id: build
         uses: geode-sdk/build-geode-mod@main
         with:
-          sdk: '4.7.0'
+          sdk: latest
           target: Android64
+          use-lto: false
 
-      - name: Upload mod
+      - name: Upload compiled mod
         uses: actions/upload-artifact@v4
         with:
           name: ImmortalMode-Android64
-          path: ${{ steps.build.outputs.build-output }}
+          path: ${{ steps.build.outputs.build-output }}/*.geode
           if-no-files-found: error
